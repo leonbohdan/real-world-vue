@@ -8,8 +8,9 @@
 
       <h4 class="title">{{ event.title }}</h4>
 
-      <base-icon name="users" />
-      <span>{{ event.attendees.length }} attendings</span>
+      <base-icon name="users">
+        {{ event.attendees.length }} attendings
+      </base-icon>
     </div>
   </router-link>
 </template>
