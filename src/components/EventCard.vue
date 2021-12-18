@@ -19,25 +19,11 @@
 import BaseIcon from './BaseIcon.vue';
 export default {
   components: { BaseIcon },
+  props: {
+    event: Object,
+  },
   data() {
-    return {
-      event: {
-        id: 1,
-        title: 'Park Cleanup',
-        time: '6:00',
-        date: 'Mon Aug 14, 2021',
-        attendees: [
-          {
-            id: 'qewe34',
-            name: 'Bohdan Leonets',
-          },
-          {
-            id: 'qefggh34',
-            name: 'Gregg Pollack',
-          },
-        ],
-      },
-    };
+    return {};
   },
 };
 </script>
