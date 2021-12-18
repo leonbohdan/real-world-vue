@@ -3,6 +3,8 @@
     <h1>Event Listing</h1>
 
     <event-card />
+
+    <base-icon />
   </div>
 </template>
 

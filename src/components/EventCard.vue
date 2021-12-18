@@ -8,13 +8,16 @@
 
       <h4 class="title">{{ event.title }}</h4>
 
+      <base-icon name="users" />
       <span>{{ event.attendees.length }} attendings</span>
     </div>
   </router-link>
 </template>
 
 <script>
+import BaseIcon from './BaseIcon.vue';
 export default {
+  components: { BaseIcon },
   data() {
     return {
       event: {
