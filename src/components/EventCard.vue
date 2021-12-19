@@ -9,7 +9,9 @@
       <h4 class="title">{{ event.title }}</h4>
 
       <base-icon name="users">
-        <span> {{ event.attendees.length }} attendings </span>
+        <span>
+          {{ event.attendees ? event.attendees.length : 0 }} attendings
+        </span>
       </base-icon>
     </div>
   </router-link>
