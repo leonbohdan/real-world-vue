@@ -6,7 +6,7 @@
 
     <p>There are {{ catLength }} categories</p>
 
-    <p>{{ getEvent(2) }}</p>
+    <p>{{ getEventById(2) }}</p>
 
     <ul>
       <li v-for="(category, index) in categories" :key="index">
@@ -17,13 +17,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   computed: {
-    getEvent() {
-      return this.$store.getters.getEventById;
-    },
+    ...mapGetters(['getEventById']),
+    // getEvent() {
+    //   return this.$store.getters.getEventById;
+    // },
     catLength() {
       return this.$store.getters.catLength;
     },
