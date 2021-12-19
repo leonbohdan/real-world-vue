@@ -71,6 +71,34 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 137271,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Test",
+      "description": "",
+      "location": "",
+      "date": "2021-12-03T17:37:00.000Z",
+      "time": "17:00",
+      "attendees": []
+    },
+    {
+      "id": 6476867,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Test2",
+      "description": "",
+      "location": "",
+      "date": "2021-12-03T17:46:00.000Z",
+      "time": "22:00",
+      "attendees": []
     }
   ]
 }
