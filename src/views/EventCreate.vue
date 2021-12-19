@@ -4,6 +4,8 @@
 
     <p>This Event was created by {{ user.id }}</p>
 
+    <p>There are {{ catLength }} categories</p>
+
     <ul>
       <li v-for="(category, index) in categories" :key="index">
         {{ category }}
@@ -16,22 +18,10 @@
 import { mapState } from 'vuex';
 
 export default {
-  // computed: {
-  //   userName() {
-  //     return this.$store.state.user.name;
-  //   },
-  //   userId() {
-  //     return this.$store.state.user.id;
-  //   },
-  // },
-  // computed: mapState({
-  //   user: 'user',
-  //   categories: 'categories',
-  // }),
-  // computed: mapState(['user', 'categories']),
   computed: {
-    localComputed() {
-      return true;
+    catLength() {
+      // return this.$store.categories.length;
+      return this.$store.getters.catLength;
     },
     ...mapState(['user', 'categories']),
   },
