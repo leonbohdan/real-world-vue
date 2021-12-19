@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Event Listing</h1>
+    <h1>Event for {{ user.user.name }}</h1>
 
     <event-card v-for="event in events" :key="event.id" :event="event" />
 
@@ -39,7 +39,7 @@ export default {
     EventCard,
   },
   computed: {
-    ...mapState(['events', 'eventsTotal']),
+    ...mapState(['events', 'eventsTotal', 'user']),
     page() {
       // What page we're currently on
       return parseInt(this.$route.query.page) || 1;
