@@ -28,7 +28,13 @@ export default {
   //   user: 'user',
   //   categories: 'categories',
   // }),
-  computed: mapState(['user', 'categories']),
+  // computed: mapState(['user', 'categories']),
+  computed: {
+    localComputed() {
+      return true;
+    },
+    ...mapState(['user', 'categories']),
+  },
 };
 </script>
 
