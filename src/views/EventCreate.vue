@@ -6,6 +6,8 @@
 
     <p>There are {{ catLength }} categories</p>
 
+    <p>{{ getEvent(2) }}</p>
+
     <ul>
       <li v-for="(category, index) in categories" :key="index">
         {{ category }}
@@ -19,6 +21,9 @@ import { mapState } from 'vuex';
 
 export default {
   computed: {
+    getEvent() {
+      return this.$store.getters.getEventById;
+    },
     catLength() {
       return this.$store.getters.catLength;
     },
