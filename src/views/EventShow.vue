@@ -41,25 +41,17 @@
 </template>
 
 <script>
-import EventService from '@/services/EventService.js';
+import { mapState } from 'vuex';
 import BaseIcon from '../components/BaseIcon.vue';
 
 export default {
   components: { BaseIcon },
   props: ['id'],
-  data() {
-    return {
-      event: {},
-    };
+  computed: {
+    ...mapState(['event']),
   },
   created() {
-    EventService.getEvent(this.id)
-      .then((res) => {
-        this.event = res.data;
-      })
-      .catch((err) => {
-        console.log('err', err.res);
-      });
+    this.$store.dispatch('fetchEvent', this.id);
   },
 };
 </script>
