@@ -44,12 +44,12 @@ export const actions = {
       .catch((error) => {
         const notification = {
           type: 'error',
-          message: 'There was a problem fetching events: ' + error.message,
+          message: 'There was a problem fetching events: ' + `${error.message}`,
         };
         dispatch('notification/add', notification, { root: true });
       });
   },
-  fetchEvent({ commit, getters }, id) {
+  fetchEvent({ commit, getters, dispatch }, id) {
     const event = getters.getEventById(id);
 
     if (event) {
@@ -59,8 +59,13 @@ export const actions = {
         .then((res) => {
           commit('SET_EVENT', res.data);
         })
-        .catch((err) => {
-          console.log('err', err.res);
+        .catch((error) => {
+          const notification = {
+            type: 'error',
+            message:
+              'There was a problem fetching event: ' + `${error.message}`,
+          };
+          dispatch('notification/add', notification, { root: true });
         });
     }
   },
@@ -68,7 +73,7 @@ export const actions = {
 
 export const getters = {
   catLength: (state) => {
-    return state.categories.length;
+    return state.categories ? state.categories.length : 0;
   },
   doneTodos: (state) => {
     return state.todos.filter((todo) => todo.done);

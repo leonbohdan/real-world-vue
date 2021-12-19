@@ -1,7 +1,7 @@
 export const namespaced = true;
 
 export const state = {
-  notification: [],
+  notifications: [],
 };
 
 let nextId = 1;
