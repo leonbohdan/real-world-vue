@@ -20,7 +20,6 @@ import { mapState } from 'vuex';
 export default {
   computed: {
     catLength() {
-      // return this.$store.categories.length;
       return this.$store.getters.catLength;
     },
     ...mapState(['user', 'categories']),
