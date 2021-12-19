@@ -48,7 +48,9 @@ export default {
   components: { BaseIcon },
   props: ['id'],
   computed: {
-    ...mapState(['event']),
+    ...mapState({
+      event: (state) => state.event.event,
+    }),
   },
   created() {
     this.$store.dispatch('fetchEvent', this.id);
