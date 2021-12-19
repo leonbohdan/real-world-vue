@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import BaseIcon from '../components/BaseIcon.vue';
 
 export default {
@@ -53,8 +53,9 @@ export default {
     }),
   },
   created() {
-    this.$store.dispatch('fetchEvent', this.id);
+    this.fetchEvent(this.id);
   },
+  methods: mapActions('event', ['fetchEvent']),
 };
 </script>
 

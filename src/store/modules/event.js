@@ -1,5 +1,7 @@
 import EventService from '@/services/EventService.js';
 
+export const namespaced = true;
+
 export const state = {
   todos: [
     { id: 1, text: '...', done: true },

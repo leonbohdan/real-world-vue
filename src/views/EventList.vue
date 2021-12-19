@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     fetchEvents() {
-      this.$store.dispatch('fetchEvents', {
+      this.$store.dispatch('event/fetchEvents', {
         perPage: this.perPage, // <-- How many items to display per page
         page: this.page, // <-- What page we're on
       });
